@@ -5,8 +5,19 @@ import {defineConfig, loadEnv} from 'vite';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
+  const siteUrl = (env.VITE_SITE_URL || 'https://rafaelarocha.com').replace(/\/$/, '');
+
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'html-seo-site-url',
+        transformIndexHtml(html: string) {
+          return html.replaceAll('%VITE_SITE_URL%', siteUrl);
+        },
+      },
+    ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },

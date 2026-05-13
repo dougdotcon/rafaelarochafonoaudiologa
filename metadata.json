@@ -1,8 +1,6 @@
 {
-  "name": "Rafaela Rocha - Fonoaudióloga",
-  "description": "Site profissional para a fonoaudióloga Rafaela Rocha, com foco em autoridade, serviços especializados e agendamento local em Ouro Verde.",
-  "requestFramePermissions": [
-    "geolocation"
-  ],
+  "name": "Rafaela Rocha | Fonoaudióloga",
+  "description": "Site do consultório em Campinas: desenvolvimento da fala e da linguagem, avaliação fonoaudiológica e atendimento humanizado. Av. Rio Rodrigues 4770 — Sala 3.",
+  "requestFramePermissions": ["geolocation"],
   "majorCapabilities": []
 }

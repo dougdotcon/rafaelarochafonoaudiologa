@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Ajuste o domínio abaixo ao publicar (deve coincidir com VITE_SITE_URL)
+Sitemap: https://rafaelarocha.com/sitemap.xml
