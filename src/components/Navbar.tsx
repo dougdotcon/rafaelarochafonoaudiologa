@@ -21,18 +21,16 @@ export function Navbar() {
           </a>
         </div>
 
-        <div className="w-full md:w-1/3 flex justify-center items-center gap-3">
-          <img src={logoPng} alt="Rafaela Rocha Fonoaudióloga" className="h-11 w-auto object-contain shrink-0" width={120} height={44} />
-          <div className="flex flex-col text-left">
-            <span className="font-serif text-2xl font-bold text-verde-apagado leading-none tracking-wide">
-              Rafaela
-              <br />
-              Rocha
-            </span>
-            <span className="text-xs font-medium text-laranja-pastel tracking-widest uppercase mt-1 font-sans">
-              Fonoaudióloga
-            </span>
-          </div>
+        <div className="w-full md:w-1/3 flex justify-center items-center">
+          <a href="#inicio" className="inline-flex shrink-0" aria-label="Rafaela Rocha Fonoaudióloga — Início">
+            <img
+              src={logoPng}
+              alt=""
+              className="h-12 md:h-14 w-auto max-w-[min(100%,220px)] object-contain"
+              width={180}
+              height={56}
+            />
+          </a>
         </div>
 
         <div className="hidden md:flex w-1/3 justify-end items-center gap-3">
