@@ -1,27 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
-  --color-primary: #1e3a34;
-  --color-primary-light: #2d5a4f;
-  --color-sage-soft: #f4f7f5;
-  --color-accent: #b48d6c;
+  --font-sans: "Montserrat", sans-serif;
+  --color-verde-apagado: #9fc0a4;
+  --color-laranja-pastel: #f9ab8e;
+  --color-verde-claro-mid: #c1dcc5;
+  --color-verde-claro-bg: #eff3e7;
+  --color-laranja-claro: #fdd3b4;
+  --color-texto-escuro: #333333;
 }
 
 @layer base {
-  body {
-    @apply font-sans text-slate-800 bg-white;
+  html {
+    scroll-behavior: smooth;
   }
-  
+
+  body {
+    @apply font-sans text-texto-escuro bg-white antialiased;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
 }
 
-.glass-card {
-  @apply bg-white/80 backdrop-blur-md border border-white/20;
+.hero-overlay {
+  background: linear-gradient(to right, rgba(159, 192, 164, 0.85), rgba(249, 171, 142, 0.75));
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.overlap-section {
+  margin-top: -80px;
+  position: relative;
+  z-index: 20;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-verde-claro-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-verde-apagado);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7ca382;
 }
 
 .text-balance {
