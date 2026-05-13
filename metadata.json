@@ -1,0 +1,8 @@
+{
+  "name": "Rafaela Rocha - Fonoaudióloga",
+  "description": "Site profissional para a fonoaudióloga Rafaela Rocha, com foco em autoridade, serviços especializados e agendamento local em Ouro Verde.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
