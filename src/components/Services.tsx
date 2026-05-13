@@ -1,101 +1,101 @@
-import { motion } from 'motion/react';
-import { Baby, Users, Brain, Mic2, Star, CheckCircle2 } from 'lucide-react';
+import { Baby, MessageCircle, BookOpen, Ear, UserRound, Brain, Sprout } from 'lucide-react';
+
+type Servico = {
+  titulo: string;
+  descricao: string;
+  Icon: typeof Baby;
+  border: string;
+  iconWrap: string;
+  iconColor: string;
+};
+
+const servicos: Servico[] = [
+  {
+    titulo: 'Atraso de Fala',
+    descricao: 'Estimulação precoce e intervenção para crianças que demoram a iniciar a fala.',
+    Icon: Baby,
+    border: 'border-verde-apagado',
+    iconWrap: 'bg-verde-claro-bg',
+    iconColor: 'text-verde-apagado',
+  },
+  {
+    titulo: 'Transtornos dos Sons da Fala',
+    descricao: 'Correção de trocas, omissões ou distorções de sons durante a fala.',
+    Icon: MessageCircle,
+    border: 'border-laranja-pastel',
+    iconWrap: 'bg-laranja-claro',
+    iconColor: 'text-laranja-pastel',
+  },
+  {
+    titulo: 'Leitura e Escrita',
+    descricao: 'Apoio em dificuldades de alfabetização, dislexia e transtornos de aprendizagem.',
+    Icon: BookOpen,
+    border: 'border-verde-claro-mid',
+    iconWrap: 'bg-verde-claro-bg',
+    iconColor: 'text-verde-apagado',
+  },
+  {
+    titulo: 'Transtorno do Processamento Auditivo Central',
+    descricao: 'Avaliação e treinamento (TPAC) para melhor compreensão das informações sonoras.',
+    Icon: Ear,
+    border: 'border-laranja-pastel',
+    iconWrap: 'bg-laranja-claro',
+    iconColor: 'text-laranja-pastel',
+  },
+  {
+    titulo: 'Transtornos do Desenvolvimento Geral',
+    descricao: 'Acompanhamento terapêutico integrado para suporte no desenvolvimento infantil (TEA, etc).',
+    Icon: UserRound,
+    border: 'border-verde-apagado',
+    iconWrap: 'bg-verde-claro-bg',
+    iconColor: 'text-verde-apagado',
+  },
+  {
+    titulo: 'Transtorno do Desenvolvimento da Fala',
+    descricao: 'Diagnóstico e tratamento de apraxia de fala infantil e outros transtornos motores.',
+    Icon: Brain,
+    border: 'border-verde-claro-mid',
+    iconWrap: 'bg-verde-claro-bg',
+    iconColor: 'text-verde-apagado',
+  },
+];
 
 export function Services() {
-  const services = [
-    {
-      title: 'Atendimento Infantil',
-      description: 'Estimulação de fala, linguagem e desenvolvimento comunicativo para crianças em fase de crescimento.',
-      icon: Baby,
-      color: 'bg-blue-50 text-blue-600',
-    },
-    {
-      title: 'Linguagem e Fala',
-      description: 'Tratamento de dificuldades na articulação das palavras, gagueira e atrasos no desenvolvimento fonológico.',
-      icon: Mic2,
-      color: 'bg-emerald-50 text-emerald-600',
-    },
-    {
-      title: 'Motricidade Orofacial',
-      description: 'Trabalho com os músculos do rosto e boca para melhorar funções como respiração, mastigação e deglutição.',
-      icon: Brain,
-      color: 'bg-purple-50 text-purple-600',
-    },
-    {
-      title: 'Fonoaudiologia Escolar',
-      description: 'Assessoria para escolas e acompanhamento de crianças com dificuldades de aprendizagem ligadas à fala.',
-      icon: Users,
-      color: 'bg-orange-50 text-orange-600',
-    }
-  ];
-
-  const highlights = [
-    'Avaliação completa e detalhada',
-    'Orientações individuais para a família',
-    'Abordagem humanizada e acolhedora',
-    'Uso de estratégias lúdicas e científicas'
-  ];
-
   return (
-    <section id="servicos" className="py-20 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16 sm:mb-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-accent font-bold uppercase tracking-widest text-[10px] sm:text-xs mb-3 block">Serviços Especializados</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">Como posso te ajudar?</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg text-balance">
-              Oferecemos um acompanhamento personalizado para cada etapa do desenvolvimento e necessidades comunicativas.
-            </p>
-          </motion.div>
+    <section id="especialidades" className="py-20 bg-verde-claro-bg relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-verde-claro-mid opacity-30 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-laranja-claro opacity-30 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
+
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <div className="text-center mb-16">
+          <span className="text-laranja-pastel font-bold tracking-wider uppercase text-sm font-sans">Áreas de Atuação</span>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-verde-apagado mt-2">Especialidades e Serviços</h2>
+          <div className="w-24 border-b-2 border-verde-apagado mx-auto mt-4" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-24">
-          {services.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="p-6 sm:p-8 rounded-[28px] sm:rounded-[32px] border border-slate-100 hover:border-primary/10 hover:shadow-2xl hover:shadow-primary/5 transition-all group bg-white"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {servicos.map((s) => (
+            <div
+              key={s.titulo}
+              className={`bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border-l-4 ${s.border} flex items-start gap-4`}
             >
-              <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl ${item.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <item.icon size={24} />
+              <div className={`${s.iconWrap} p-3 rounded-lg ${s.iconColor} shrink-0`}>
+                <s.Icon className="w-6 h-6" strokeWidth={1.75} />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-primary mb-3 sm:mb-4">{item.title}</h3>
-              <p className="text-slate-500 leading-relaxed text-sm">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="bg-sage-soft rounded-[30px] sm:rounded-[48px] p-6 sm:p-12 md:p-16 grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-          <div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-6 leading-tight">Diferenciais do nosso atendimento</h3>
-            <p className="text-slate-600 mb-8 border-l-4 border-accent pl-4 sm:pl-6 italic text-sm sm:text-base">
-              "Meu objetivo é que cada paciente se sinta ouvido e compreendido, criando um espaço seguro para o desenvolvimento da comunicação."
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {highlights.map((text) => (
-                <div key={text} className="flex items-center gap-3">
-                  <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span className="text-xs sm:text-sm font-medium text-slate-700">{text}</span>
-                </div>
-              ))}
+              <div>
+                <h4 className="font-bold text-gray-800 mb-1 font-sans">{s.titulo}</h4>
+                <p className="text-sm text-gray-500 font-sans">{s.descricao}</p>
+              </div>
             </div>
-          </div>
-          <div className="relative">
-            <div className="aspect-video bg-white rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden flex items-center justify-center p-6 sm:p-8 text-center border-2 sm:border-4 border-white">
-               <div className="flex flex-col items-center">
-                 <Star className="text-accent mb-3 fill-accent" size={24} />
-                 <p className="text-lg sm:text-2xl font-serif text-primary mb-2 italic font-bold">Resgate a sua voz</p>
-                 <p className="text-[10px] sm:text-sm text-slate-500 uppercase tracking-widest font-semibold">Transformando vidas através da comunicação</p>
-               </div>
+          ))}
+
+          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-laranja-pastel flex items-start gap-4 md:col-span-2 lg:col-span-3 lg:w-1/3 lg:mx-auto">
+            <div className="bg-laranja-claro p-3 rounded-lg text-laranja-pastel shrink-0">
+              <Sprout className="w-6 h-6" strokeWidth={1.75} />
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800 mb-1 font-sans">Desenvolvimento da Fala e Linguagem</h4>
+              <p className="text-sm text-gray-500 font-sans">Estimulação global e marcos do desenvolvimento comunicativo.</p>
             </div>
           </div>
         </div>
